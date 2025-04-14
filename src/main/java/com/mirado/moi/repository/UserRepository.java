@@ -1,5 +1,7 @@
 package com.mirado.moi.repository;
 
+import java.util.List;
+
 import com.mirado.moi.entity.User;
 
 import jakarta.ejb.Stateless;
@@ -9,7 +11,7 @@ import jakarta.persistence.PersistenceContext;
 @Stateless
 public class UserRepository {
 
-    @PersistenceContext
+    @PersistenceContext(unitName = "my_persistence_unit")
     private EntityManager entityManager;
 
     public User create(User user) {
@@ -26,4 +28,9 @@ public class UserRepository {
             return null;
         }
     }
+
+    public List<User> findAll() {
+        return entityManager.createQuery("SELECT u FROM User u", User.class).getResultList();
+    }
+
 }

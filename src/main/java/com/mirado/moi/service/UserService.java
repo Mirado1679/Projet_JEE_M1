@@ -1,5 +1,7 @@
 package com.mirado.moi.service;
 
+import java.util.List;
+
 import com.mirado.moi.entity.User;
 import com.mirado.moi.repository.UserRepository;
 import jakarta.ejb.Stateless;
@@ -22,5 +24,9 @@ public class UserService {
 
     public User register(User user) {
         return userRepository.create(user);
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }

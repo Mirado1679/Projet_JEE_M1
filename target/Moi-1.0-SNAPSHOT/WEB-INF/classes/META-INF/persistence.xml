@@ -5,6 +5,10 @@
     <!-- Entités JPA -->
     <class>com.mirado.moi.entity.Personne</class>
     <class>com.mirado.moi.entity.User</class>
+    <class>com.mirado.moi.entity.Restaurant</class>
+    <class>com.mirado.moi.entity.Plat</class>
+    <class>com.mirado.moi.entity.Achat</class>
+    <class>com.mirado.moi.entity.AchatDetail</class>
 
     
     <properties>

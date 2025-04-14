@@ -3,6 +3,9 @@ package com.mirado.moi.rest;
 import com.mirado.moi.entity.User;
 import com.mirado.moi.service.UserService;
 import com.mirado.moi.util.TokenUtils;
+
+import java.util.List;
+
 import com.mirado.moi.dto.AuthResponse;
 
 import jakarta.inject.Inject;
@@ -48,5 +51,12 @@ public class UserResource {
                     .entity(e.getMessage())
                     .build();
         }
+    }
+
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON) // <--- Important
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
     }
 }
